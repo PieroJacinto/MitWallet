@@ -36,8 +36,7 @@ body {
 .popup-quote {
     font-family : Baskerville, Georgia, serif;
     font-style : italic;
-    position: flex;
-    color: #FFF;
+    position: flex;    
     padding: 20px;
     text-align: center;
     font-size: 1rem;
