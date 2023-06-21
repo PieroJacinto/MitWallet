@@ -158,6 +158,19 @@ body {
     height:50px; 
     z-index:0;
 }
+
+/* tarjeta de contacto */
+.card{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;  
+    
+}
+
+.card-body {
+    background-color: transparent !important;
+    color: #FFF !important;
+}
 /*-------------------------animations-----------------------*/
 @keyframes transitionAnimation {
     0% {
