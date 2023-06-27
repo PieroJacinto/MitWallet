@@ -2,7 +2,14 @@
 
 module.exports = {
   home: async (req, res) => {    
-   res.render("home")
+    
+
+    res.render("home")
+  },
+  register: async (req, res) => {    
+    
+    
+    res.render("register")
   },
 
 };

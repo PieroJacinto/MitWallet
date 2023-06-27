@@ -7,5 +7,5 @@ const multerMiddleware = require("../middlewares/multerMiddleware");
 
 
 router.get("/", mainController.home);
-
+router.get("/register", mainController.register);
 

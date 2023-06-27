@@ -23,12 +23,28 @@ body {
 /* Home */
 #profilePicture, #profilePicture img {
     position: relative;
-    width: 96px;
-    height: 96px;
+    width: 150px;
+    height: 150px;
     display: block;
     margin: 40px auto 20px;
     border-radius: 50%;
     -webkit-tap-highlight-color: transparent;
+}
+.user-default-container{
+    position: relative;
+}
+
+.user-default{
+    background-color: grey;
+}
+.user-default-txt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    text-decoration: none;   
+    color: white; 
 }
 
 /*-------------------------popup------------------------*/
@@ -89,7 +105,10 @@ body {
     display: block;
     margin: 27px auto;
 }
-
+#links form  {    
+    display: flex;  
+    flex-direction: column;
+}
 .link {
     position: relative;
     background-color: transparent;
@@ -106,6 +125,17 @@ body {
     text-decoration: none;
     transition: all .25s cubic-bezier(.08, .59, .29, .99); 
     -webkit-tap-highlight-color: transparent;
+}
+.avatar-label {
+    margin-left: 0.75rem;
+    color: #FFF;
+    margin-bottom: 0.75rem !important;
+    text-align: center;
+}
+.register {
+    text-align: center;
+    color: #FFF;
+    margin-top: 3rem;
 }
 
 @media (hover: hover) {
