@@ -26,23 +26,119 @@
             <div id="stars2"></div>
             <div id="stars3"></div>
         </section>
-       
-        <!-- <a id="profilePicture" data-bs-toggle="modal" data-bs-target="#exampleModal" class="user-default-container">
-            <img src="images/user-default.png" alt="Profile Picture" class="user-default"/>
-            <p class="user-default-txt">
-                + agregar foto
-            </p>
-        </a>                -->
-
+    
         <h1 class="register"> Registrate</h1>
              
         <div id="links">
-            <form action="/user/register"  method="POST" enctype="multipart/form-data" id="formRegister" novalidate>
-                <input type="text" name="fullName" placeholder="Nombre Completo" class="link">
-                <input type="text" name="email" placeholder="Email" class="link">
-                <input type="text" name="password" placeholder="Contraseña" class="link">
+            <form action="/register"  method="POST" enctype="multipart/form-data" id="formRegister" novalidate>
+                <input 
+                    type="text" 
+                    name="name" 
+                    placeholder="Nombre" 
+                    class="link  <%= 
+                        locals.errors && errors.name 
+                        ? 'is-invalid' 
+                        : null 
+                    %>"
+                    value="<%= locals.oldData ? oldData.name : null %>" 
+                >
+                <span class="error">
+                    
+                </span>
+                <% if (locals.errors && errors.name) { %>
+                    <div class= "error-msg">
+                        <%= errors.name.msg %>               
+                    </div>
+                <% } %>                   
+                <input 
+                    type="text" 
+                    name="lastName" 
+                    placeholder="Apellido" 
+                    class="link <%= 
+                        locals.errors && errors.lastName 
+                        ? 'is-invalid' 
+                        : null 
+                    %>"
+                    value="<%= locals.oldData ? oldData.lastname : null %>"
+                >
+                <span class="error"></span>
+                <% if (locals.errors && errors.lastName) { %>
+                    <div class= "error-msg">
+                        <%= errors.lastName.msg %>               
+                    </div>
+                <% } %>
+                <input 
+                    type="text" 
+                    name="email" 
+                    placeholder="Email" 
+                    class="link <%= 
+                        locals.errors && errors.email 
+                        ? 'is-invalid' 
+                        : null 
+                    %>"
+                    value="<%= locals.oldData ? oldData.email : null %>"
+                >
+                <span class="error"></span>
+                <% if (locals.errors && errors.email) { %>
+                    <div class= "error-msg">
+                        <%= errors.email.msg %>               
+                    </div>
+                <% } %>
+                <input 
+                    type="text" 
+                    name="password" 
+                    placeholder="Contraseña" 
+                    class="link <%= 
+                        locals.errors && errors.password 
+                        ? 'is-invalid' 
+                        : null 
+                    %>"
+                    value="<%= locals.oldData ? oldData.password : null %>"
+                >
+                <span class="error"></span>
+                <% if (locals.errors && errors.password) { %>
+                    <div class= "error-msg">
+                        <%= errors.password.msg %>               
+                    </div>
+                <% } %>
+               
+                <input 
+                    type="text" 
+                    name="phone" 
+                    placeholder="Teléfono" 
+                    class="link <%= 
+                        locals.errors && errors.phone 
+                        ? 'is-invalid' 
+                        : null 
+                    %>"
+                    value="<%= locals.oldData ? oldData.phone : null %>"
+                >
+                <span class="error"></span>
+                <% if (locals.errors && errors.phone) { %>
+                    <div class= "error-msg">
+                        <%= errors.phone.msg %>               
+                    </div>
+                <% } %>
                 <label for="avatar" class="avatar-label"><h4 class="font-medium mb-0">Foto de perfil</h4></label>
-                <input type="file" name="image" placeholder="Avatar" class="link"> 
+                <input 
+                    type="file" 
+                    name="avatar" 
+                    placeholder="Avatar" 
+                    class="link"
+                    value="<%= locals.oldData ? oldData.avatar : null %>"
+                > 
+                <span class="error">
+                    
+                </span>
+                <% if (locals.errors && errors.avatar) { %>
+                    <div class= "error-msg">
+                        <%= errors.avatar.msg %>               
+                    </div>
+                <% } %>                
+
+                <button class="link" type="submit">
+                    Registrarme
+                </button>  
 
             </form>
         </div>
