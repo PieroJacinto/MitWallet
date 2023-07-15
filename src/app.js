@@ -3,7 +3,7 @@ require("dotenv").config();
 
 //REQUERIMOPS EXPRESS
 const express = require("express");
-
+const cors = require("cors");
 const methodOverride = require("method-override");
 
 //REQUERIMOS SESSION

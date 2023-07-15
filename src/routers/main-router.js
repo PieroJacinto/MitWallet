@@ -16,7 +16,7 @@ router.get("/", mainController.home);
 router.get("/register", mainController.register);
 router.post(
     "/register",
-    userValidations, // Middlewares de validación deben ir primero
+    //userValidations, // Middlewares de validación deben ir primero
     upload.single("avatar"), // Luego el middleware de carga de archivos
     mainController.processRegister
   );

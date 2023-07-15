@@ -110,6 +110,7 @@ body {
     flex-direction: column;
 }
 .link {
+    width: 100%;
     position: relative;
     background-color: transparent;
     color:  #FFF;
@@ -209,13 +210,13 @@ body {
 .is-valid input,
 .is-valid select,
 .is-valid textarea {
-  border-color: #198754;
+  border:solid 3px #198754;
 }
 
 .is-notvalid input,
 .is-notvalid select, 
 .is-notvalid textarea {
-  border-color: #842029;
+  border: solid 3px #842029;
 }
 
 .error {
@@ -225,6 +226,8 @@ body {
 .is-notvalid .error {
   display: block;
   color: #842029;
+  margin-left: .75rem;
+  margin-bottom: .75rem;
 }
 /*---------ERROR MSG-----------*/
 
@@ -234,7 +237,7 @@ body {
     margin-bottom: .75rem;
 }
 .is-invalid{
-    border: solid #B00020 2px;
+    border: solid #B00020 3px;
 }
 .error {
     display: none;
