@@ -9,9 +9,13 @@ module.exports = {
         type: DataTypes.INTEGER,
         autoIncrement: true
       },
-      fullName: { 
+      name: { 
           type: DataTypes.STRING(500),
           allowNull:false,
+      },
+      lastName: { 
+        type: DataTypes.STRING(500),
+        allowNull:false,
       },
       email: {
           type: DataTypes.STRING(500),
@@ -20,6 +24,21 @@ module.exports = {
       password:{
           type: DataTypes.STRING(500),
           allowNull:false,
+      },
+      phone: {
+        type: DataTypes.STRING(500),
+        allowNull: false,
+      },
+      avatar: {
+        type: DataTypes.STRING(500),
+      },
+      created_at: {
+        allowNull: false,
+        type: DataTypes.DATE,
+      },
+      updated_at: {
+        allowNull: false,
+        type: DataTypes.DATE,
       },
     })
   },

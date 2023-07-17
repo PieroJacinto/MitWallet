@@ -110,6 +110,7 @@ body {
     flex-direction: column;
 }
 .link {
+    width: 100%;
     position: relative;
     background-color: transparent;
     color:  #FFF;
@@ -200,6 +201,46 @@ body {
 .card-body {
     background-color: transparent !important;
     color: #FFF !important;
+}
+
+/* form validations */
+
+/*-------- FRONTEND VALIDATIONS-----------*/
+
+.is-valid input,
+.is-valid select,
+.is-valid textarea {
+  border:solid 3px #198754;
+}
+
+.is-notvalid input,
+.is-notvalid select, 
+.is-notvalid textarea {
+  border: solid 3px #842029;
+}
+
+.error {
+  display: none;
+}
+
+.is-notvalid .error {
+  display: block;
+  color: #842029;
+  margin-left: .75rem;
+  margin-bottom: .75rem;
+}
+/*---------ERROR MSG-----------*/
+
+.error-msg{    
+    color: #B00020;
+    margin-left: .75rem;
+    margin-bottom: .75rem;
+}
+.is-invalid{
+    border: solid #B00020 3px;
+}
+.error {
+    display: none;
 }
 /*-------------------------animations-----------------------*/
 @keyframes transitionAnimation {

@@ -5,9 +5,14 @@ module.exports = function(sequelize, dataTypes){
 		id: {
             type:dataTypes.INTEGER,
 			primaryKey: true,
-			autoIncrement: true
+			autoIncrement: true,
+            allowNull: false,
 		},
-		fullName: {
+		name: {
+            type:dataTypes.STRING(500),
+            allowNull:false,
+        },
+        lastName: {
             type:dataTypes.STRING(500),
             allowNull:false,
         },
@@ -19,10 +24,19 @@ module.exports = function(sequelize, dataTypes){
             type:dataTypes.STRING(500),
             allowNull:false,
         },
+        phone: {
+            type: dataTypes.STRING(500),
+            allowNull: false,
+        },
+        avatar: {
+            type: dataTypes.STRING(500),
+        },
 	}
 	let config = {
 		tableName: "user",
-		timestamps: true
+		timestamps: true,
+        createdAt: "created_at",
+        updatedAt: "updated_at",
 	}
 
     const User = sequelize.define(alias, cols, config);
