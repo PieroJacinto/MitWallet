@@ -1,0 +1,97 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <style>
+        
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+        }
+
+       
+        .window {
+            width: 300px;
+            height: 400px;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; 
+            padding: 20px;
+        }
+
+        .window img {
+            max-width: 100%;
+            max-height: 100px;
+        }
+
+
+        p {
+            color: white; /* Cambia el color del texto a blanco */
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            background: white;
+            border-radius: 13px;
+            margin: 5px 0;
+            padding: 10px;
+        }
+
+        /* Estilos para el botón "Ingresar" */
+        .button {
+            width: 100%;
+           
+            background: grey;
+            border-radius: 13px;
+            margin: 10px 0;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+
+
+        
+        .forgot-text {
+            margin-top: 10px;
+            color: white;
+            font-size: 13px;
+            font-family: Avenir;
+            font-weight: 400;
+            word-wrap: break-word;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="window">
+        <img src="logomit.png" alt="logomit">
+        <p>Login</p>
+         <!-- Formulario de usuario y contraseña -->
+         <div class="form">
+            <div class="input-container">
+                <!-- Campo de usuario -->
+                <input type="text" placeholder="Usuario">
+            </div>
+            <div class="input-container">
+                <!-- Campo de contraseña -->
+                <input type="password" placeholder="Contraseña">
+            </div>
+             <!-- Botón para el formulario -->
+             <button class="button">Ingresar</button>
+            </div>
+</form>
+        <div class="forgot-text" style="width: 100%; height: 100%; text-align: center; color: white; font-size: 13px; font-family: Avenir; font-weight: 400; word-wrap: break-word">Olvidé mi Usuario o Contraseña</div>
+
+    </div>
+</body>
+</html>

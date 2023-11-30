@@ -2,164 +2,126 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <!-- Font -->
-    <link href="https://fonts.cdnfonts.com/css/avenir" rel="stylesheet">   
+    <link rel="stylesheet" type="text/css" href="estilo.css">
     
-    <!-- CSS -->
-    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        /* Estilos generales */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: black;
+        }
 
-    <!-- Fonts Awesome -->
-    <script src="https://kit.fontawesome.com/2cffc479ad.js" crossorigin="anonymous"></script>
+        /* Estilos para la ventana */
+        .window {
+            width: 100%;
+            max-width: 400px; /* Tamaño máximo para dispositivos más grandes */
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
 
-    <!-- Bootstrap 5.3 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        .profile-circle {
+            width: 100px;
+            height: 100px;
+            background-color: lightgray;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .profile-text {
+            text-align: center;
+            color: #323232;
+            font-size: 16px;
+            font-family: Avenir;
+            font-weight: 500;
+            word-wrap: break-word;
+        }
+
+        /* Estilos para el formulario */
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        /* Estilos para los campos de entrada y botones */
+        .input-container {
+            position: relative;
+            margin-top: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: white; /* Color de fondo del botón */
+            color: #323232; /* Color del texto del botón */
+            cursor: pointer;
+        }
+
+        .button-container {
+            margin-top: 10px;
+            text-align: center; /* Esto centra el botón */
+        }
+
+        /* Media Query para dispositivos más pequeños */
+        @media (max-width: 768px) {
+            .window {
+                max-width: 90%; /* Reducir el ancho máximo para pantallas más pequeñas */
+            }
+        }
+    </style>
 </head>
-<body >
-    <main id="root"> 
-        <!-- EFECTO ESTRELLAS FONDO PARALLAX -->
-        <section class="animated-background">
-            <div id="stars1"></div>
-            <div id="stars2"></div>
-            <div id="stars3"></div>
-        </section>
-    
-        <h1 class="register"> Registrate</h1>
-             
-        <div id="links">
-            <form action="/register"  method="POST" enctype="multipart/form-data" id="formRegister" novalidate>
-                <div>
-                    <input 
-                        type="text" 
-                        placeholder="Nombre" 
-                        class="link  <%= 
-                            locals.errors && errors.name 
-                            ? 'is-invalid' 
-                            : null 
-                            %>"
-                        value="<%= locals.oldData ? oldData.name : null %>" 
-                        name= "name" 
-                    >
-                    <span class="error"></span>  
-                    <% if (locals.errors && errors.name) { %>
-                        <div class= "error-msg">
-                            <%= errors.name.msg %>               
-                        </div>
-                    <% } %>                   
-                </div>
-                <div>
-                    <input 
-                        type="text" 
-                        name="lastName" 
-                        placeholder="Apellido" 
-                        class="link <%= 
-                            locals.errors && errors.lastName 
-                            ? 'is-invalid' 
-                            : null 
-                        %>"
-                        value="<%= locals.oldData ? oldData.lastName : null %>"
-                    >
-                    <span class="error"></span>  
-                    <% if (locals.errors && errors.lastName) { %>
-                        <div class= "error-msg">
-                            <%= errors.lastName.msg %>               
-                        </div>
-                    <% } %>
-                </div>
-                <div>
-                    <input 
-                        type="text" 
-                        name="email" 
-                        placeholder="Email" 
-                        class="link <%= 
-                            locals.errors && errors.email 
-                            ? 'is-invalid' 
-                            : null 
-                        %>"
-                        value="<%= locals.oldData ? oldData.email : null %>"
-                    >
-                    <span class="error"></span>  
-                    <% if (locals.errors && errors.email) { %>
-                        <div class= "error-msg">
-                            <%= errors.email.msg %>               
-                        </div>
-                    <% } %>
-                </div>
-                <div>
-                    <input 
-                        type="text" 
-                        name="password" 
-                        placeholder="Contraseña" 
-                        class="link <%= 
-                            locals.errors && errors.password 
-                            ? 'is-invalid' 
-                            : null 
-                        %>"
-                        value="<%= locals.oldData ? oldData.password : null %>"
-                    >
-                    <span class="error"></span>  
-                    <% if (locals.errors && errors.password) { %>
-                        <div class= "error-msg">
-                            <%= errors.password.msg %>               
-                        </div>
-                    <% } %>                 
-                </div>
-                <div>
-                    <input 
-                        type="text" 
-                        name="phone" 
-                        placeholder="Teléfono" 
-                        class="link <%= 
-                            locals.errors && errors.phone 
-                            ? 'is-invalid' 
-                            : null 
-                        %>"
-                        value="<%= locals.oldData ? oldData.phone : null %>"
-                    >
-                    <span class="error"></span>
-                    <% if (locals.errors && errors.phone) { %>
-                        <div class= "error-msg">
-                            <%= errors.phone.msg %>               
-                        </div>
-                    <% } %>
-                </div>
-                <div>
-                    <label for="avatar" class="avatar-label"><h4 class="font-medium mb-0">Foto de perfil</h4></label>
-                    <input 
-                        type="file" 
-                        name="avatar" 
-                        placeholder="Avatar" 
-                        class="link"
-                        value="<%= locals.oldData ? oldData.avatar : null %>"
-                    > 
-                    <span class="error"></span>  
-                    <% if (locals.errors && errors.avatar) { %>
-                        <div class= "error-msg">
-                            <%= errors.avatar.msg %>               
-                        </div>
-                    <% } %>              
-                </div>
 
-                <button class="link" type="submit">
-                    Registrarme
-                </button>  
+<body>
+    <div class="window">
+        <div class="profile-circle">
+            <div class="profile-text">
+               
+            </div>
+        </div>
+        <div style="width: 100%; height: 100%; text-align: center; color: #818181; font-size: 20px; font-family: Avenir; font-weight: 800; word-wrap: break-word">Nombre y Apellido</div>
+        <div style="width: 100%; text-align: center; color: #818181; font-size: 16px; font-family: Avenir; font-weight: 800; word-wrap: break-word">Empresa</div>
+        <form>
+            <div class="input-container">
+                <button type="button" id="email">Email</button>
+            </div>
 
-            </form>
-        </div>
-    
-        <div class="signature">
-            MITWallet by MadeInTuc
-        </div>
-                 
-        
-    </main>
-    
-    <!-- Validation script -->
-    <script src="/js/validations/register.js"></script>
-    <!-- Bootstrap 5.3 -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+            <div class="input-container">
+                <button type="button" id="password">Contraseña</button>
+            </div>
+
+            <div class="input-container">
+                <button type="button" id="nombre">Nombre</button>
+            </div>
+
+            <div class="input-container">
+                <button type="button" id="apellido">Apellido</button>
+            </div>
+
+            <div class="input-container">
+                <button type="button" id="empresa"> Empresa</button>
+            </div>
+
+            <div class="input-container">
+                <button type="button" id="whatsapp"> WhatsApp</button>
+            </div>
+            <div style="width: 100%; height: 100%; text-align: center"><span style="color: white; font-size: 13px; font-family: Avenir; font-weight: 800; word-wrap: break-word">MITWallet </span><span style="color: white; font-size: 13px; font-family: Avenir; font-weight: 500; word-wrap: break-word">by MadeInTuc</span></div>
+        </form>
+    </div>
 </body>
 </html>
